@@ -4,40 +4,45 @@ import (
 	"fmt"
 )
 
+// 定数
+// 頭文字を大文字にすると他のパッケージからも呼び出せる
+const Pi = 3.14
+
+const (
+	URL      = "http://xxx.co.jp"
+	SiteName = "test"
+)
+
+const (
+	A = 1
+	B
+	C
+	D = "A"
+	E
+	F
+)
+
+const (
+	c0 = iota
+	c1
+	c2
+)
+
+// var Big int = 9223372036854775807 + 1
+const Big = 9223372036854775807 + 1
+
 func main() {
-	// var i int = 1
-	// fl64 := float64(i)
-	// fmt.Println(fl64)
-	// fmt.Printf("i = %T\n", i)
-	// fmt.Printf("fl64 = %T\n", fl64)
+	fmt.Println(Pi)
 
-	// i2 := int(fl64)
-	// fmt.Printf("i2 = %T\n", i2)
+	// 定数は再定義できない
+	// Pi = 3
+	// fmt.Println(Pi)
 
-	// fl := 10.5
-	// i3 := int(fl)
-	// fmt.Printf("i3 = %T\n", i3)
-	// fmt.Println(i3)
+	fmt.Println(URL, SiteName)
 
-	// var s string = "100"
-	// fmt.Printf("s = %T\n", s)
+	fmt.Println(A, B, C, D, E, F)
 
-	// i, err := strconv.Atoi(s)
-	// if err != nil {
-	// 	fmt.Println(err)
-	// }
-	// fmt.Println(i)
-	// fmt.Printf("i = %T\n", i)
+	fmt.Println(Big - 1)
 
-	// var i2 int = 100
-	// s2 := strconv.Itoa(i2)
-	// fmt.Println(s2)
-	// fmt.Printf("s2 = %T\n", s2)
-
-	var h string = "Hello World"
-	b := []byte(h)
-	fmt.Println(b)
-
-	h2 := string(b)
-	fmt.Println(h2)
+	fmt.Println(c0, c1, c2)
 }
