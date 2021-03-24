@@ -3,22 +3,23 @@ package main
 import "fmt"
 
 func main() {
-	var fl64 float64 = 2.4
-	fmt.Println(fl64)
+	var t, f bool = true, false
+	fmt.Println(t, f)
 
-	fl := 3.2
-	fmt.Println(fl64 + fl)
-	fmt.Printf("%T, %T\n", fl64, fl)
+	var s string = "Hello Golang"
+	fmt.Println(s)
+	fmt.Printf("%T\n", s)
 
-	var fl32 float32 = 1.2
-	fmt.Printf("%T\n", fl32)
+	var si string = "300"
+	fmt.Println(si)
+	fmt.Printf("%T\n", si)
 
-	fmt.Printf("%T\n", float64(fl32))
+	fmt.Println(`test
+	test
+	    test`)
 
-	zero := 0.0
-	pinf := 1.0 / zero
-	fmt.Println(pinf)
+	fmt.Println("\"")
+	fmt.Println(`"`)
 
-	ninf := -1.0 / zero
-	fmt.Print(ninf)
+	fmt.Println(string(s[0]))
 }
