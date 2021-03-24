@@ -1,48 +1,29 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-// 定数
-// 頭文字を大文字にすると他のパッケージからも呼び出せる
-const Pi = 3.14
+func Plus(x, y int) int {
+	return x + y
+}
 
-const (
-	URL      = "http://xxx.co.jp"
-	SiteName = "test"
-)
+func Div(x, y int) (int, int) {
+	q := x / y
+	r := x % y
+	return q, r
+}
 
-const (
-	A = 1
-	B
-	C
-	D = "A"
-	E
-	F
-)
-
-const (
-	c0 = iota
-	c1
-	c2
-)
-
-// var Big int = 9223372036854775807 + 1
-const Big = 9223372036854775807 + 1
+func Double(price int) (result int) {
+	result = price * 2
+	return
+}
 
 func main() {
-	fmt.Println(Pi)
+	i := Plus(1, 2)
+	fmt.Println(i)
 
-	// 定数は再定義できない
-	// Pi = 3
-	// fmt.Println(Pi)
+	i2, i3 := Div(9, 4)
+	fmt.Println(i2, i3)
 
-	fmt.Println(URL, SiteName)
-
-	fmt.Println(A, B, C, D, E, F)
-
-	fmt.Println(Big - 1)
-
-	fmt.Println(c0, c1, c2)
+	i4 := Double(1000)
+	fmt.Println(i4)
 }
