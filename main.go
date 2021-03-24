@@ -1,23 +1,43 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	var x interface{}
-	fmt.Println(x)
+	// var i int = 1
+	// fl64 := float64(i)
+	// fmt.Println(fl64)
+	// fmt.Printf("i = %T\n", i)
+	// fmt.Printf("fl64 = %T\n", fl64)
 
-	x = 1
-	fmt.Println(x)
+	// i2 := int(fl64)
+	// fmt.Printf("i2 = %T\n", i2)
 
-	x = 3.14
-	fmt.Println(x)
+	// fl := 10.5
+	// i3 := int(fl)
+	// fmt.Printf("i3 = %T\n", i3)
+	// fmt.Println(i3)
 
-	x = "A"
-	fmt.Println(x)
+	// var s string = "100"
+	// fmt.Printf("s = %T\n", s)
 
-	x = [3]int{1, 2, 3}
-	fmt.Println(x)
+	// i, err := strconv.Atoi(s)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+	// fmt.Println(i)
+	// fmt.Printf("i = %T\n", i)
 
-	// x = 2
-	// fmt.Println(x + 3)
+	// var i2 int = 100
+	// s2 := strconv.Itoa(i2)
+	// fmt.Println(s2)
+	// fmt.Printf("s2 = %T\n", s2)
+
+	var h string = "Hello World"
+	b := []byte(h)
+	fmt.Println(b)
+
+	h2 := string(b)
+	fmt.Println(h2)
 }
