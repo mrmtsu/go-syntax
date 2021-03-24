@@ -2,16 +2,24 @@ package main
 
 import "fmt"
 
-func main() {
-	f := func(x, y int) int {
-		return x + y
+func integers() func() int {
+	i := 0
+	return func() int {
+		i++
+		return i
 	}
-	i := f(1, 2)
-	fmt.Println(i)
+}
 
-	i2 := func(x, y int) int {
-		return x + y
-	}(1, 2)
+func main() {
+	ints := integers()
+	fmt.Println(ints())
+	fmt.Println(ints())
+	fmt.Println(ints())
+	fmt.Println(ints())
 
-	fmt.Println(i2)
+	otherints := integers()
+	fmt.Println(otherints())
+	fmt.Println(otherints())
+	fmt.Println(otherints())
+	fmt.Println(otherints())
 }
