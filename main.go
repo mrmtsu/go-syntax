@@ -3,31 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	var m = map[string]int{"A": 100, "B": 200}
-	fmt.Println(m)
-
-	m2 := map[string]int{"A": 100, "B": 200}
-	fmt.Println(m2)
-
-	m3 := map[int]string{
-		1: "A",
-		2: "B",
+	m := map[string]int{
+		"Apple":  100,
+		"Banana": 200,
 	}
-	fmt.Println(m3)
 
-	m4 := make(map[int]string)
-	fmt.Println(m4)
-
-	m4[1] = "JAPAN"
-	m4[2] = "USA"
-	fmt.Println(m4)
-
-	fmt.Println(m["A"])
-	fmt.Println(m4[2])
-
-	s, ok := m4[3]
-	if !ok {
-		fmt.Println("error")
+	for k, v := range m {
+		fmt.Println(k, v)
 	}
-	fmt.Println(s, ok)
 }
