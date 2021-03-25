@@ -1,29 +1,37 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
+
+func TestDefer() {
+	defer fmt.Println("END")
+	fmt.Println("START")
+}
+
+func RunDefer() {
+	defer fmt.Println("1")
+	defer fmt.Println("2")
+	defer fmt.Println("3")
+}
 
 func main() {
-	// Loop:
-	// 	for {
-	// 		for {
-	// 			for {
-	// 				fmt.Println("START")
-	// 				break Loop
-	// 			}
-	// 			fmt.Println("処理をしない")
-	// 		}
-	// 		fmt.Println("処理をしない")
-	// 	}
-	// 	fmt.Println("END")
+	TestDefer()
 
-Loop:
-	for i := 0; i < 3; i++ {
-		for j := i; j < 3; j++ {
-			if j > 1 {
-				continue Loop
-			}
-			fmt.Println(i, j, i*j)
-		}
-		fmt.Println("処理をしない")
+	// defer func() {
+	// 	fmt.Println("1")
+	// 	fmt.Println("2")
+	// 	fmt.Println("3")
+	// }()
+
+	RunDefer()
+
+	file, err := os.Create("test.txt")
+	if err != nil {
+		fmt.Println(err)
 	}
+	defer file.Close()
+
+	file.Write([]byte("Hello"))
 }
